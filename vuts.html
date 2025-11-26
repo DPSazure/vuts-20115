@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для сотрудников ВУЦ - ВЧ №20115</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tactical-background"></div>
+    <div class="grid-overlay"></div>
+    <!-- Остальное содержимое -->
+    
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">ВУЦ</div>
+                <div class="logo-text">Военно-учебный центр<br>ВЧ №20115</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="ub.html">Для учебной роты</a></li>
+                    <li><a href="vuts.html" class="active">Для сотрудников ВУЦ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="disclaimer">
+            <h3>ВАЖНО: Данный сайт не является официальным!</h3>
+            <p>Все права принадлежат Amazing Online. Продолжая находиться на сайте, вы соглашаетесь с этим.</p>
+        </div>
+
+        <h1>Сектор для сотрудников ВУЦ</h1>
+
+        <div id="passwordSection" class="password-section">
+            <div class="password-form">
+                <h3>Доступ ограничен</h3>
+                <p>Для доступа к информации введите пароль:</p>
+                <input type="password" id="passwordInput" placeholder="Введите пароль доступа">
+                <button onclick="checkPassword()">Получить доступ</button>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </div>
+
+        <div id="contentSection" class="hidden-content">
+            <div class="section">
+                <h2>Служебная информация для сотрудников ВУЦ</h2>
+                
+                <div class="info-card">
+                    <h3>1. Как принять КМБ</h3>
+                    <p>Процедура приема курса молодого бойца включает следующие этапы:</p>
+                    <ul>
+                        <li>Принять присягу</li>
+                        <li>Принять сборку - разборку "АК105-м"</li>
+                        <li>Принять знание устава ВС</li>
+                        <li>Принять знание ЗООТ</li>
+                        <li>Принять знание погон</li>
+                        <li>Принять оброщение к половнику/генералу</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>2. Как проводить лекции/тренировки</h3>
+                    <p>Методические рекомендации по проведению занятий:</p>
+                    <ul>
+                        <li>Подготовка учебного плана за 24 часа до занятия</li>
+                        <li>Использование интерактивных материалов</li>
+                        <li>Практические отработки навыков</li>
+                        <li>Контроль усвоения материала</li>
+                        <li>Ведение журнала успеваемости</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>3. Как проводить мероприятия</h3>
+                    <p>Организация учебных и строевых мероприятий:</p>
+                    <ul>
+                        <li>Разработка плана мероприятия</li>
+                        <li>Координация с смежными подразделениями</li>
+                        <li>Обеспечение безопасности</li>
+                        <li>Подведение итогов и анализ</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>4. Форум Amazing Online</h3>
+                    <p>Ссылка на форум для рапортов о проделанной работе:</p>
+                    <a href="https://forum.amazing-online.com/threads/raporty-o-prodelannoj-rabote-voennosluzhaschix-voenno-uchebnogo-centra-voinskoj-chasti-no20115.971624/" 
+                       class="forum-link" target="_blank">
+                        Перейти на форум Amazing Online
+                    </a>
+                    <p class="forum-description">На форуме размещаются все рапорты о проделанной работе военнослужащих военно-учебного центра войсковой части №20115</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Военно-учебный центр ВЧ №20115 | Amazing Online © 2024</p>
+        <p>Неофициальный информационный ресурс</p>
+    </footer>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const passwordSection = document.getElementById('passwordSection');
+            const contentSection = document.getElementById('contentSection');
+            
+            if (password === '!qzwxecrvasdf654!') {
+                passwordSection.style.display = 'none';
+                contentSection.style.display = 'block';
+            } else {
+                errorMessage.textContent = 'Неверный пароль! Доступ запрещен.';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+        
+        // Обработка нажатия Enter в поле пароля
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles';
+    document.body.appendChild(particlesContainer);
+    
+    const particleCount = 30;
+    
+    for (let i = 0; i < particleCount; i++) {
+        createParticle();
+    }
+    
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 3 + 1;
+        const left = Math.random() * 100;
+        const animationDuration = Math.random() * 20 + 10;
+        const animationDelay = Math.random() * 5;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${left}vw`;
+        particle.style.animationDuration = `${animationDuration}s`;
+        particle.style.animationDelay = `${animationDelay}s`;
+        
+        particlesContainer.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+            createParticle();
+        }, animationDuration * 1000);
+    }
+});
+</script>
+</body>
+</html>
